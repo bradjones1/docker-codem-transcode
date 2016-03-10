@@ -1,0 +1,19 @@
+---
+#
+
+- hosts: local
+  vars:
+    codem_transcode_version: master
+    codem_transcode_dir: /opt/codem-transcode
+    codem_transcode_port: 8080
+    codem_transcode_access_log: /var/log/access_log
+    #only sqllite available. codem also supports others.
+    codem_transcode_database:  /var/db/jobs.db
+    codem_transcode_slots: 1
+    codem_transcode_interface: 
+    codem_transcode_encoder: ffmpeg
+    codem_transcode_scratch_dir: /tmp
+    codem_transcode_use_scratchdir: false
+    codem_transcode_ffprobe: ffprobe 
+  roles:  
+    - { role: dorftv.codem-transcode }
